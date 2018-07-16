@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  jenkins:
+    build: .
+    restart: unless-stopped
+    environment:
+      JAVA_OPTS: "-Djava.awt.headless=true"
+    ports:
+      - "50000:50000"
+      - "8080:8080"
+    volumes:
+      - jenkins_data:/home/jenkins
+volumes:
+  jenkins_data:
+    driver: local
