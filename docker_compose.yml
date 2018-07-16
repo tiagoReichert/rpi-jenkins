@@ -10,7 +10,7 @@ services:
       - "50000:50000"
       - "8080:8080"
     volumes:
-      - jenkins_data:/home/jenkins
+      - jenkins_data:/var/jenkins_home
 volumes:
   jenkins_data:
     driver: local
